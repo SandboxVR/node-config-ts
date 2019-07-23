@@ -6,7 +6,7 @@
     "json-to-ts": "^1.5.4",
     "minimist": "^1.2.0",
     "ramda": "^0.26.1",
-    "webpack": "^4.31.0"
+    "webpack": "^4.37.0"
   },
   "scripts": {
     "prepublishOnly": "node_modules/.bin/tsc -d",
