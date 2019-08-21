@@ -1,6 +1,6 @@
 {
   "name": "@sandboxvr/config",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "dependencies": {
     "@types/webpack": "^4.4.31",
     "json-to-ts": "^1.5.4",
