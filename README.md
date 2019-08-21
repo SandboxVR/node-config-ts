@@ -1,7 +1,6 @@
 # node-config-ts
 
-[![Build Status](https://travis-ci.org/tusharmath/node-config-ts.svg?branch=master)](https://travis-ci.org/tusharmath/node-config-ts)
-[![Greenkeeper badge](https://badges.greenkeeper.io/tusharmath/node-config-ts.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/sandboxvr/node-config-ts.svg?branch=master)](https://travis-ci.org/sandboxvr/node-config-ts)
 ![npm](https://img.shields.io/npm/v/node-config-ts.svg)
 
 A simple configuration manager for typescript based projects.
@@ -25,7 +24,7 @@ A simple configuration manager for typescript based projects.
    npm i node-config-ts
    ```
 
-2. Add a `postinstall` step in ``package.json``
+2. Add a `postinstall` step in `package.json`
 
    ```json
    {

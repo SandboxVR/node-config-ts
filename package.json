@@ -1,12 +1,11 @@
 {
-  "name": "node-config-ts",
-  "version": "0.0.0-development",
+  "name": "@sandboxvr/config",
+  "version": "2.2.4",
   "dependencies": {
     "@types/webpack": "^4.4.31",
     "json-to-ts": "^1.5.4",
     "minimist": "^1.2.0",
-    "ramda": "^0.26.1",
-    "webpack": "^4.31.0"
+    "ramda": "^0.26.1"
   },
   "scripts": {
     "prepublishOnly": "node_modules/.bin/tsc -d",
@@ -30,6 +29,9 @@
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"
   },
+  "peerDependencies": {
+    "webpack": "^4"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -37,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tusharmath/node-config-ts.git"
+    "url": "https://github.com/sandboxvr/node-config-ts"
   },
   "license": "MIT"
 }
