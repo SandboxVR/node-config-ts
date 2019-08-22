@@ -1,7 +1,7 @@
-# node-config-ts
+# @sandboxvr/config
 
-[![Build Status](https://travis-ci.org/sandboxvr/node-config-ts.svg?branch=master)](https://travis-ci.org/sandboxvr/node-config-ts)
-![npm](https://img.shields.io/npm/v/node-config-ts.svg)
+[![Build Status](https://travis-ci.org/sandboxvr/@sandboxvr/config.svg?branch=master)](https://travis-ci.org/sandboxvr/@sandboxvr/config)
+![npm](https://img.shields.io/npm/v/@sandboxvr/config.svg)
 
 A simple configuration manager for typescript based projects.
 
@@ -21,7 +21,7 @@ A simple configuration manager for typescript based projects.
 1. Install package
 
    ```bash
-   npm i node-config-ts
+   npm i @sandboxvr/config
    ```
 
 2. Add a `postinstall` step in `package.json`
@@ -29,7 +29,7 @@ A simple configuration manager for typescript based projects.
    ```json
    {
      "scripts": {
-       "postinstall": "node-config-ts"
+       "postinstall": "config-types"
      }
    }
    ```
@@ -52,10 +52,10 @@ A simple configuration manager for typescript based projects.
 
    A new `Config.d.ts` will be generated automatically. This file could be ignored from git as it gets automatically generated based on the structure of `default.json`
 
-5. Import and use `node-config-ts`
+5. Import and use `@sandboxvr/config`
 
    ```typescript
-   import {config} from 'node-config-ts'
+   import {config} from '@sandboxvr/config'
 
    console.log(config) // logs the config data from default.json
    ```
@@ -69,7 +69,7 @@ If your project uses [webpack] then with the `NodeConfigTSPlugin` you can easily
 **webpack.config.ts**
 
 ```ts
-import {NodeConfigTSPlugin} from 'node-config-ts/webpack'
+import {NodeConfigTSPlugin} from '@sandboxvr/config/webpack'
 
 export = NodeConfigTSPlugin({
   // .. other stuff
@@ -122,7 +122,7 @@ There are three directories in which a project can have configurations — `depl
 
 ### Using environment variables
 
-Whenever the value is prefixed with the letters `@@` **node-config-ts** automatically looks for an environment variable with that name. For example —
+Whenever the value is prefixed with the letters `@@` **@sandboxvr/config** automatically looks for an environment variable with that name. For example —
 
 ```json
 // default.json
@@ -161,10 +161,10 @@ In the above case even if the `default.json` has a port setting of `9000` the cl
 
 ## Differences with node-config
 
-1.  **No reserved words:** With [node-config] you can not use a certain set of [reserved words] in your configuration. This is an unnecessary restriction and `node-config-ts` doesn't have it.
+1.  **No reserved words:** With [node-config] you can not use a certain set of [reserved words] in your configuration. This is an unnecessary restriction and `@sandboxvr/config` doesn't have it.
 2.  **Simpler API:** Instead of using methods such as `config.get('xxx')` in `node-config` you can simply use the exported `config` object.
 3.  **Warnings & Errors:** [node-config] relies on calling the `get` and the `has` methods to issue errors. This is unsafe typically when the configurations are different between your dev and production environments.
-    With `node-config-ts` you can trust the typescript compiler to issue an error immediately when you try to access a property that isn't defined anywhere. Consider the following case —
+    With `@sandboxvr/config` you can trust the typescript compiler to issue an error immediately when you try to access a property that isn't defined anywhere. Consider the following case —
 
 #### default.json
 
@@ -202,10 +202,10 @@ console.log(config.get('baseURL')) // works locally but fails in production
 
 This would work when `john` is running the application on his local machine. But as soon as its deployed in production the configuration property `baseURL` isn't available anymore and it results in runtime exceptions.
 
-##### using node-config-ts:
+##### using @sandboxvr/config:
 
 ```ts
-import {config} from 'node-config-ts'
+import {config} from '@sandboxvr/config'
 
 console.log(config.port) // proper intellisense support
 console.log(config.baseURL) // throws compile time error immediately in production
