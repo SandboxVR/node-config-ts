@@ -1,11 +1,11 @@
+import * as pkg from './package.json'
 import {config} from './index'
 import {DefinePlugin, Configuration} from 'webpack'
 import * as R from 'ramda'
 
-const setConfigResolver = R.assocPath(
-  ['resolve', 'alias', 'node-config-ts'],
-  'node-config-ts/iso'
-)
+const {name} = pkg as {name: string}
+
+const setConfigResolver = R.assocPath(['resolve', 'alias', name], `${name}/iso`)
 const setGlobalConfigPlugin = R.over(
   R.lensProp('plugins'),
   R.append(
@@ -20,4 +20,4 @@ export const NodeConfigTSPlugin: {
 } = R.compose(
   setConfigResolver,
   setGlobalConfigPlugin
-)
+) as (config: Configuration) => Configuration
