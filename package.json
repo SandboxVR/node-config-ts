@@ -1,6 +1,6 @@
 {
   "name": "@sandboxvr/config",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "dependencies": {
     "json-to-ts": "^1.6.0",
     "minimist": "^1.2.0",
